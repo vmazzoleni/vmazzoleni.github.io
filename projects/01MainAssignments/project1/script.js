@@ -1,4 +1,3 @@
-
 //BEER VOLUME
 let beerLevel = 0;
 let isFilling = false;
@@ -7,39 +6,37 @@ let glassX = 0;
 let bg;
 
 function preload() {
-  bg = loadImage("https://deckard.openprocessing.org/user556818/visual2806875/h39d270f0b031825b840ed4e2d1cc1339/Bar.webp");
+  bg = loadImage("assets/Bar.png");
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(900, 900);
 }
-
 
 function draw() {
+  imageMode(CORNER);
   image(bg, 0, 0, width, height); 
 
-noStroke();
+  noStroke();
 
-// Table
-for (let y = height - 150; y < height; y++) {
-  let t = map(y, height - 150, height, 0, 1);
-  let r = lerp(90, 40, t);
-  let g = lerp(50, 20, t);
-  let b = lerp(0, 10, t);
-  fill(r, g, b);
-  rect(0, y, width, 1);
-}
+  // Table
+  for (let y = height - 150; y < height; y++) {
+    let t = map(y, height - 150, height, 0, 1);
+    let r = lerp(90, 40, t);
+    let g = lerp(50, 20, t);
+    let b = lerp(0, 10, t);
+    fill(r, g, b);
+    rect(0, y, width, 1);
+  }
 
-// Glossy highlight
-fill(255, 80);
-rect(0, height - 155, width, 12);
+  // Glossy highlight
+  fill(255, 80);
+  rect(0, height - 155, width, 12);
 
-// Dark top edge line
-fill(25, 15, 10);
-rect(0, height - 150, width, 4);
+  // Dark top edge line
+  fill(25, 15, 10);
+  rect(0, height - 150, width, 4);
 
-
-	
   // Serve animation
   if (serving) {
     glassX += 10;
@@ -94,16 +91,22 @@ rect(0, height - 150, width, 4);
 
   pop();
 
-  // Volume Text
-  fill(0);
+  // ===================================
+  // TEXT ON TABLE (WHITE, THICK, BOTTOM)
+  // ===================================
   textAlign(CENTER);
-  textSize(32);
-  text("🔊" + int(beerLevel * 100) + '%', width / 2, 500);
+  stroke(255);
+  strokeWeight(4);
+  fill(255);
+
+  // Volume Text
+  textSize(40);
+  text("🔊 " + int(beerLevel * 100) + "%", width / 2, height - 60);
 
   // Serve text
   if (beerLevel >= 1) {
-    textSize(24);
-    text("Press SPACE to serve", width/2, 460);
+    textSize(28);
+    text("Press SPACE to serve", width / 2, height - 110);
   }
 
   // Update fill level
@@ -141,7 +144,7 @@ function mouseReleased() {
 // Tap drawing
 function drawTap(active) {
   push();
-  translate(width/2, height/2 - 220);
+  translate(width / 2, height / 2 - 220);
   noStroke();
 
   fill(180);
@@ -156,9 +159,12 @@ function drawTap(active) {
   fill(150);
   rect(-15, 200, 30, 20, 5);
 
+  // White thick text
+  stroke(255);
+  strokeWeight(3);
+  fill(255);
   textAlign(CENTER);
   textSize(20);
-  fill(50);
   text('VOLUME CONTROL', 0, -90);
 
   pop();
