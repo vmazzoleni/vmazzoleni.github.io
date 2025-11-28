@@ -71,8 +71,8 @@ function draw() {
   translate(0, 0, 0);
   rotateZ(PI);
   rotateX(radians(-80));
-
-  scale(3, 3, 3);
+  rotateZ(radians(-mouseX));
+  scale(3, -3, 3);
   noStroke();
   model(toniModel);
 
