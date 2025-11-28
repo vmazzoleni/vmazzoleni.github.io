@@ -91,9 +91,7 @@ function draw() {
 
   pop();
 
-
-  // TEXT ON TABLE (WHITE, THICK, BOTTOM)
-
+  // TEXT ON TABLE
   textAlign(CENTER);
   stroke(255);
   strokeWeight(4);
