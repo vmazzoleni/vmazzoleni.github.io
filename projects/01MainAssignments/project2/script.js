@@ -1,6 +1,6 @@
 // SETTINGS
-let patternText = "ZHDK";   // testo normale
-let pressedText = "TONI";   // testo quando il mouse è premuto
+let patternText = "ZHDK";   
+let pressedText = "TONI";   
 
 // MODEL
 let toniModel;
