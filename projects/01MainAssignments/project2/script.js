@@ -30,7 +30,6 @@ function drawBackgroundPattern() {
   let speed = mouseIsPressed ? 1.2 : 0.5;
   let fall = mouseIsPressed ? 30 : 0;
 
-  // 👉 scegli il testo in base al mouse
   let currentText = mouseIsPressed ? pressedText : patternText;
 
   bgScrollX -= speed;
@@ -73,7 +72,7 @@ function draw() {
   rotateZ(PI);
   rotateX(radians(-80));
 
-  scale(3, -3, 3);
+  scale(3, 3, 3);
   noStroke();
   model(toniModel);
 
@@ -85,7 +84,6 @@ function updatePattern() {
   let speed = mouseIsPressed ? baseScrollSpeed * 4 : baseScrollSpeed;
   let fall = mouseIsPressed ? 40 : 0;
 
-  // 👉 scegli lo stesso testo anche per la texture
   let currentText = mouseIsPressed ? pressedText : patternText;
 
   scrollX -= speed;
