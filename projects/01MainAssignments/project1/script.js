@@ -6,11 +6,11 @@ let glassX = 0;
 let bg;
 
 function preload() {
-  bg = loadImage("assets/Bar.png");
+  bg = loadImage("Bar.png");
 }
 
 function setup() {
-  createCanvas(800, 600, WEBGL);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
