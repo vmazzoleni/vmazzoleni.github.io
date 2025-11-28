@@ -6,7 +6,7 @@ let glassX = 0;
 let bg;
 
 function preload() {
-  bg = loadImage("Bar.png");
+  bg = loadImage("assets/Bar.png");
 }
 
 function setup() {
@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
   imageMode(CORNER);
-  image(bg, 0, 0, width, height); 
+  image(bg, 0, 0, windowWidth, windowHeight); 
 
   noStroke();
 
